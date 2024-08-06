@@ -1,0 +1,5 @@
+./node_modules
+./package-lock.json
+./mb.log
+./mb1.log
+./mb.pid

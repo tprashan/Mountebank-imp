@@ -1,0 +1,60 @@
+ {
+    "port": 4545,
+    "protocol": "http",
+    "stubs": [
+      {
+        "responses": [
+          {
+            "proxy": {
+              "to": "https://reqres.in",
+              "mode": "proxyOnce"
+            }
+          }
+        ],
+        "predicates": [
+          {
+            "matches": {
+              "method": "GET",
+              "path": "/api/users/\\d+$"
+            }
+          }
+        ]
+      },
+      {
+        "responses": [
+          {
+            "proxy": {
+              "to": "https://reqres.in",
+              "mode": "proxyOnce"
+            }
+          }
+        ],
+        "predicates": [
+          {
+            "matches": {
+              "method": "GET",
+              "path": "/api/unknown/\\d+$"
+            }
+          }
+        ]
+      },
+      {
+        "responses": [
+          {
+            "proxy": {
+              "to": "https://httpbin.org",
+              "mode": "proxyOnce"
+            }
+          }
+        ],
+        "predicates": [
+          {
+            "equals": {
+              "method": "GET",
+              "path": "/get"
+            }
+          }
+        ]
+      }
+    ]
+ }
